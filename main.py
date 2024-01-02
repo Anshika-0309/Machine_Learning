@@ -1,3 +1,4 @@
+# Implementing simple linear regression
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import datasets, linear_model
@@ -8,7 +9,7 @@ diabetes = datasets.load_diabetes()
 # print(diabetes.keys())
 # dict_keys(['data', 'target', 'frame', 'DESCR', 'feature_names', 'data_filename', 'target_filename', 'data_module'])
 
-diabetes_X = diabetes.data[:, np.newaxis, 2]            # using only one feature (simple linear regression)
+diabetes_X = diabetes.data[:, np.newaxis, 2]            # using only one feature to keep it understandable(simple linear regression)
 
 diabetes_X_train = diabetes_X[:-30]
 diabetes_X_test = diabetes_X[-30:]
@@ -30,4 +31,4 @@ print("Intercepts: ", model.intercept_)
 
 plt.scatter(diabetes_X_test, diabetes_Y_test)
 plt.plot(diabetes_X_test, diabetes_Y_predicted)
-plt.show()
+plt.show()                                             # show the simple linear regression plot along with the scattered data
